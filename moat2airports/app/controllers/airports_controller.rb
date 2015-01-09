@@ -5,11 +5,6 @@ class AirportsController < ApplicationController
             @display = true
             @departure = Airport.search params[:query], load: true
             @arrival = Airport.search params[:arrival_query], load: true
-		#@hash = Gmaps4rails.build_markers(@users) do |user, marker|
-		#      marker.lat user.latitude
-		#      marker.lng user.longitude
-		#      marker.title user.title
-		#    end
         else
             @display = false
 	    @departure = []

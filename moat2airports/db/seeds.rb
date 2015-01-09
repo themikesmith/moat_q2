@@ -9,6 +9,14 @@
 #  import from csv file :: 
 #  http://openflights.org/data.html
 require 'csv'
+#file = File.open("airport_names.json", "w")
+#file.puts "["
 CSV.foreach('lib/assets/airports.dat', :headers => true) do |row|
-    Airport.create!(row.to_hash) if row[3] == 'United States' and row[4].present?
+    if row[3] == 'United States' and row[4].present?
+        Airport.create!(row.to_hash) if row[3] == 'United States' and row[4].present?
+        #file.puts "#{row[1]},"
+    end
 end
+#file.puts "]"
+#file.flush
+#file.close

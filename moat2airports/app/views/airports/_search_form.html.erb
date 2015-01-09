@@ -1,0 +1,13 @@
+<h1>Plot a flight:</h1>
+<%= form_tag root_path, method: :get do %>
+    <div id="departure_airport">
+    Departing: <%= text_field_tag :query, params[:query], class: "typeahead", placeholder: "Departure Airport" %>
+    </div>
+    <div>
+    Arriving: <%= text_field_tag :arrival_query, params[:arrival_query], id: "arrival_search", autocomplete: "off" %>
+    </div>
+    <%= submit_tag "Plot flight", name: 'submit' %>
+    <% if @display %>
+        <%= link_to 'Clear', root_path %>
+    <%end%>
+<% end %>

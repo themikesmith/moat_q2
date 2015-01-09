@@ -1,0 +1,11 @@
+<%= render 'search_form' %>
+<% if @display %>
+    <% id = 1 %>
+    <% @departure.each do |d| %>
+        <% @arrival.each do |a| %>
+            <%= render partial: 'display_trip', locals: {departure: d, arrival: a, distance: d.distance_to(a), mapid: "map_#{id}"} %>
+            <% id = id + 1 %>
+        <%end%>
+    <%end%>
+<%end%>
+

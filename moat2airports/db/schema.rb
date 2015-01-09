@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108221213) do
+ActiveRecord::Schema.define(version: 20150109044203) do
 
   create_table "airports", force: true do |t|
     t.datetime "created_at"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150108221213) do
     t.decimal  "offset"
     t.string   "dst"
     t.string   "tz"
+    t.string   "address"
   end
 
 end

@@ -10,6 +10,5 @@
 #  http://openflights.org/data.html
 require 'csv'
 CSV.foreach('lib/assets/airports.dat', :headers => true) do |row|
-    Airport.create!(row.to_hash) if row[3] == 'United States'
-    print row.inspect if row[3] == 'United States'
+    Airport.create!(row.to_hash) if row[3] == 'United States' and row[4].present?
 end

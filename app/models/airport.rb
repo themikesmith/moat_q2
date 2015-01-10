@@ -8,6 +8,9 @@ class Airport < ActiveRecord::Base
     end
     def self.parse_airport_str(str)
         m = str.match(/(.*)\s\(*.*/)
+        if m ==  nil or m.length < 2
+            return ''
+        end
         return m[1]
     end
 end

@@ -2,7 +2,9 @@
 <% if @display %>
     <% id = 1 %>
     <% @departure.each do |d| %>
+        <%= puts d.inspect %>
         <% @arrival.each do |a| %>
+            <%= puts a.inspect %>
             <%= render partial: 'display_trip', locals: {departure: d, arrival: a, distance: d.distance_to(a), mapid: "map_#{id}"} %>
             <% id = id + 1 %>
         <%end%>

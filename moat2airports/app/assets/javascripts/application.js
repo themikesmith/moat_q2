@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require twitter/typeahead
-//= require underscore
+//= require jquery-ui
 //= require gmaps/google
+//= require underscore-min
+//= require autocomplete-rails
 //= require_tree .

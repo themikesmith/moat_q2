@@ -1,10 +1,10 @@
 <h1>Plot a flight:</h1>
 <%= form_tag root_path, method: :get do %>
-    <div id="departure_airport">
-    Departing: <%= text_field_tag :query, params[:query], class: "typeahead", placeholder: "Departure Airport" %>
+    <div id="departure-airport">
+        Departing: <%= autocomplete_field_tag :departure_query, params[:departure_query], airports_autocomplete_airport_name_path, :size => 75, placeholder: "Departure Airport" %>
     </div>
-    <div>
-    Arriving: <%= text_field_tag :arrival_query, params[:arrival_query], id: "arrival_search", autocomplete: "off" %>
+    <div id="arrival-airport">
+        Arriving: <%= autocomplete_field_tag :arrival_query, params[:arrival_query], airports_autocomplete_airport_name_path, :size => 75, placeholder: "Arrival Airport" %>
     </div>
     <%= submit_tag "Plot flight", name: 'submit' %>
     <% if @display %>

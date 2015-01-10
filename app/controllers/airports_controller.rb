@@ -10,11 +10,19 @@ class AirportsController < ApplicationController
             if @departure.length == 1 and @arrival.length == 1
                 @display = true
             else
+                puts @departure.inspect
+                puts @arrival.inspect
                 if @departure.length > 1
-                    flash.now[:alert_dep] = 'You must search for an exact departure airport.'
+                    flash.now[:alert_dep] = 'You must search for one exact departure airport.'
                 end
                 if @arrival.length > 1
-                    flash.now[:alert_arr] = 'You must search for an exact arrival airport.'
+                    flash.now[:alert_arr] = 'You must search for one exact arrival airport.'
+                end
+                if @departure.length == 0
+                    flash.now[:alert_dep] = 'You must search for an existing departure airport.'
+                end
+                if @arrival.length == 0
+                    flash.now[:alert_arr] = 'You must search for an existing arrival airport.'
                 end
             end
         end
